@@ -1,5 +1,15 @@
-const Logo = ({ className = '', ...props }) => (
-  <svg
+import Image from 'next/image'
+
+const Logo = ({ className = '', ...props }) => {
+  return <>
+    <Image
+      src="/logo.svg"
+      alt="Woofers"
+      width="150"
+      height="42"
+    />
+  </>
+  return <svg
     width="32"
     height="32"
     viewBox="0 0 32 32"
@@ -16,6 +26,6 @@ const Logo = ({ className = '', ...props }) => (
       fill="var(--primary)"
     />
   </svg>
-)
+}
 
 export default Logo

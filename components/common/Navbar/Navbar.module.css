@@ -1,6 +1,7 @@
 .root {
   @apply sticky top-0 bg-primary z-40 transition-all duration-150;
   min-height: 74px;
+  border-bottom: 1px solid var(--accent-2);
 }
 
 .nav {
@@ -26,10 +27,12 @@
 }
 
 .logo {
-  @apply cursor-pointer rounded-full border transform duration-100 ease-in-out;
+  @apply cursor-pointer rounded-full transform duration-100 ease-in-out;
 
   &:hover {
-    @apply shadow-md;
+    /* @apply shadow-md; */
     transform: scale(1.05);
   }
+
+  line-height: 0;
 }

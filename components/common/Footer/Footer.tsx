@@ -33,10 +33,10 @@ const Footer: FC<Props> = ({ className, pages }) => {
           <div className="col-span-1 lg:col-span-2">
             <Link href="/">
               <a className="flex flex-initial items-center font-bold md:mr-24">
-                <span className="rounded-full border border-accent-6 mr-2">
+                <span className="rounded-full mr-2">
                   <Logo />
                 </span>
-                <span>ACME</span>
+                {false && <span>WOOFERS</span>}
               </a>
             </Link>
           </div>
@@ -55,22 +55,22 @@ const Footer: FC<Props> = ({ className, pages }) => {
           </div>
           <div className="col-span-1 lg:col-span-2 flex items-start lg:justify-end text-primary">
             <div className="flex space-x-6 items-center h-10">
-              <a
+              {false && <a
                 className={s.link}
                 aria-label="Github Repository"
                 href="https://github.com/vercel/commerce"
               >
                 <Github />
-              </a>
-              <I18nWidget />
+              </a>}
+              {process.env.NEXT_PUBLIC_INTERNATIONALIZATION_ENABLED && <I18nWidget />}
             </div>
           </div>
         </div>
         <div className="pt-6 pb-10 flex flex-col md:flex-row justify-between items-center space-y-4 text-accent-6 text-sm">
           <div>
-            <span>&copy; 2020 ACME, Inc. All rights reserved.</span>
+            <span>&copy; 2021 Woofers, Inc. All rights reserved.</span>
           </div>
-          <div className="flex items-center text-primary text-sm">
+          {false && <div className="flex items-center text-primary text-sm">
             <span className="text-primary">Created by</span>
             <a
               rel="noopener noreferrer"
@@ -84,7 +84,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
                 alt="Vercel.com Logo"
               />
             </a>
-          </div>
+          </div>}
         </div>
       </Container>
     </footer>
