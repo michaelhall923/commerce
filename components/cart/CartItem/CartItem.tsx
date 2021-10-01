@@ -74,7 +74,7 @@ const CartItem = ({
     // do this differently as it could break easily
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item.quantity])
-
+  
   return (
     <li
       className={cn(s.root, {
@@ -111,7 +111,7 @@ const CartItem = ({
           </Link>
           {options && options.length > 0 && (
             <div className="flex items-center pb-1">
-              {options.map((option: ItemOption, i: number) => (
+              {options.map((option: ItemOption, i: number) => {option.name && (
                 <div
                   key={`${item.id}-${option.name}`}
                   className="text-sm font-semibold text-accent-7 inline-flex items-center justify-center"
@@ -131,7 +131,7 @@ const CartItem = ({
                   )}
                   {i === options.length - 1 ? '' : <span className="mr-3" />}
                 </div>
-              ))}
+              )})}
             </div>
           )}
           {variant === 'display' && (
